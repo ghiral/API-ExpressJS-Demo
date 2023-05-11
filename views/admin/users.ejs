@@ -1,0 +1,76 @@
+<style>
+    .error {
+        color: red;
+    }
+</style>
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title p-2">All Users</h3>
+                        <div class="text-right">
+                            <a href="javascript:void(0)" type="button" class="btn btn-dark refresh">Refresh</a>
+                        </div>
+                    </div>
+                    <form method="post" id="frm-example">
+                        <div class="card-body">
+                            <table class="table data-table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Image</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <button type="submit" class="btn btn-danger" id="multiple_delete_btn" disabled>Delete selected <span style="display: none" id="multiple_user_delete_loader"><i class="fa fa-spinner fa-spin" aria-hidden="true"></i></span></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade view-user" id="view_user_modal">
+        <div class="modal-dialog modal-l">
+            <div class="modal-content">
+                <div class="modal-header" style="padding: 7px 20px;">
+                    <h4 class="modal-title" id="user_modal_title">View User</h4>
+                    <button type="button" class="close " data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="padding:0.5rem;">
+                    <div class="card card-primary card-outline">
+                        <div class="card-body box-profile">
+                            <div class="text-center">
+                                <img class="profile-user-img img-fluid img-circle" id="view_image_preview" src="" alt="User Image">
+                            </div>
+                            <h3 class="profile-username text-center" id="user_name"></h3>
+                            <ul class="list-group list-group-unbordered mb-3">
+                                <!-- <li class="list-group-item store_li">
+                                    <b>Store</b> <span class="float-right" id="view_store">-</span>
+                                </li> -->
+                                <li class="list-group-item">
+                                    <b>Email</b> <span class="float-right" id="view_email">-</span>
+                                </li>
+                                
+                                <li class="list-group-item">
+                                    <b>Joined On</b> <span class="float-right" id="view_created_at">-</span>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
